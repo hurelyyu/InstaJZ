@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from Insta.views import HelloWorld
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('insta/', include('Insta.url')),
+    #.as_view() function is defined in TemplateView
+    path('', HelloWorld.as_view(), name='helloworld'),
+
 ]
