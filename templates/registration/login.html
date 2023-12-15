@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Login</h1>
+<form method="post">
+    {% csrf_token %} <!-- django form protective -->
+    <!-- form里所有让我显示的field都以paragraph的形式显示 -->
+    {{ form.as_p }} <!-- Django中使用变量的符号{{ ; 从CreateView这个view里返回的是一个form -->
+    <button type = "submit">Login</button>  
+</form>
+
+{% endblock content %}

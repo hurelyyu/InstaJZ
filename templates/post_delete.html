@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Delete Post</h1>
+<!-- 上传图片是一个post操作 所以method是post -->
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %} <!-- django form protective -->
+    <!-- form里所有让我显示的field都以paragraph的形式显示 -->
+    <p> Do you want to delete "{{post.title}}" ?</p>
+    <button type = "submit">Delete</button>  
+</form>
+
+{% endblock content %}
